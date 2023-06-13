@@ -1,7 +1,7 @@
 <!-- template -->
 <template>
-    <div>
-        <navigation/>
+    <div id="navigationbar">
+        <navigation :msg="'Welcome to the lounge'"/>
     </div>
 </template>
 
@@ -17,4 +17,7 @@ export default{
 </script>
 
 <!-- style -->
-<style></style>
+<style>
+
+
+</style>
