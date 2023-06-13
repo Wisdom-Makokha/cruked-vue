@@ -19,7 +19,8 @@
 
   :root
   {
+    background-color:rgb(23, 37, 45);
+    color: rgb(187, 221, 244);
     margin-left: 15.625%;
-    margin-right:15.625%;
-    background-color:rgb(248, 238, 225);
+    margin-right: 15.625%;
   }

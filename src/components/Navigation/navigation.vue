@@ -2,20 +2,13 @@
 <template>
     <div id="topnavigation">
         <div id="logo" >CRUK3D</div>
-        <div :class="first" id="parentmsg">Welcome to the lounge</div>
-        <div id="routes">
-            <a href="">home</a>
-            <a href="">search</a>
-            <a href="">games</a>
-            <a href="">about</a>
+        <div id="leftbar">
+            <a id="routes" href="">home</a>
+            <a id="routes" href="">search</a>
+            <a id="routes" href="">games</a>
+            <a id="routes" href="">about</a>
         </div>
     </div>
-        <button @click="altermsgfont">Message<br>change</button><br>
-        <button @click="alterimage">Image<br>change</button><br>
-        <!-- <img :src="lounge" alt="lounge welcome"> -->
-        <button @click="increaseage">Increase age<br>Age is {{ age }}</button>
-        <button @click="decreaseage">Decrease age<br>Age is {{ age }}</button><br>
-        <img :src="lounge">
 </template>
 
 <!-- script -->
@@ -23,7 +16,7 @@
     //props is tasked with passing data from a parent component to a child component
     export default
     {
-        props: ['msg'],
+        props: ['msg', 'tilte', 'subtilte'],
         
         data()
         {
@@ -77,9 +70,17 @@
 
 <!-- style -->
 <style>
+    #topnavigation
+    {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
     img
     {
         height: 200px;
+        border-radius: 20px;
     }
     button
     {
@@ -102,7 +103,8 @@
     }
 
     button:active{
-        background-color: white;
+        background-color: rgb(223, 242, 255);
+        filter: drop-shadow(0 0 4px rgb(119, 193, 241));
     }
     #logo
     {
@@ -121,21 +123,21 @@
 
     .second
     {
-        color:black;
+        color:pink;
         margin-top: 55px;
         font-size: 120%;
     }
 
     
-    #topnavigation
-    {
-        display: flex;
-        justify-content: space-between;
-        
-    }
+    
 
-    #routes
+    #leftbar
     {
         margin-top: 55px;
+    }
+    
+    #routes
+    {
+        margin-left: 10px;
     }
 </style>
