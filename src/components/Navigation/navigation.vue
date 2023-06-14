@@ -3,10 +3,11 @@
     <div id="topnavigation">
         <div id="logo" >CRUK3D</div>
         <div id="leftbar">
-            <a id="routes" href="">home</a>
-            <a id="routes" href="">search</a>
-            <a id="routes" href="">games</a>
-            <a id="routes" href="">about</a>
+            <a id="routes" href="" target="_blank">
+                <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg">
+            </a>
+            <a id="routes" href="" target="_blank">games</a>
+            <a id="routes" href="" target="_blank">about</a>
         </div>
     </div>
 </template>
@@ -74,6 +75,13 @@
     {
         display: flex;
         justify-content: space-between;
+        
+    }
+
+    #routes > img
+    {
+        height: 20px;
+        width: 20px;
         
     }
     
