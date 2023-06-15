@@ -1,29 +1,94 @@
 <!-- template -->
 <template>
-    <div>
+    <div id="tournament">
+        <div id="tourndetails">
+            <img src="https://images.pexels.com/photos/5691866/pexels-photo-5691866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="tournament poster">
+        </div>
+        <div id="tourndetails">
+            <button>+</button>
+            <button @click="decreasetickets">-</button>
+            <p>{{ events.ticketsavailable }}</p>
+        </div>
+    </div>
+
+</template>
+
+<!-- script -->
+<script>
+import { createCacheExpression } from '@vue/compiler-core';
+
+    export default
+    {
+        data()
+        {
+            return{
+                events:
+                [
+                    {
+                        id: "CHKING123456",
+                        name: "Chess",
+                        poster: "",
+                        description: "",
+                        ticketsavailable: 200,
+                    },
+                    {
+                        id: "PSKING123456",
+                        name: "Hollow-Knight",
+                        poster: "",
+                        description: "",
+                        ticketsavailable: 50,
+                    },
+                    {
+                        id: "DCKING123456",
+                        name: "Dead Cells",
+                        poster: "",
+                        description: "",
+                        ticketsavailable: 50
+                    }
+                ]
+
+            },
+            
+        },
+        methods:
+        {
+            decreasetickets()
+            {
+                this.events.
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    #tournament
+    {
+        display: flex;
+    }
+</style>
+
+<!-- template -->
+<!-- <div id="centersection">
         <div id="imagesection">
-            <div id="consolebuttons">
-                <!-- these buttons are used to run some methods that change the value of cons when clicked
-                    this changes the image that is displayed -->
-                <button @click="playstationconsole">Playstation</button>
-                <button @click="xboxconsole">Xbox</button>
-                <button @click="nintendoconsole" >Nintendo</button>
-            </div>
-            <!-- using conditional rendering, one of three images is displayed based on the value of cons -->
+            
             <div v-if="cons === 7">
-                <img src="https://images.pexels.com/photos/596750/pexels-photo-596750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.pexels.com/photos/1365795/pexels-photo-1365795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
             <div v-else-if="cons === 9">
-                <img src="https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.pexels.com/photos/2323435/pexels-photo-2323435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
             <div v-else>
-                <img src="https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.pexels.com/photos/2263816/pexels-photo-2263816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
-            <!-- <img :src="thelounge"> -->
+            <div id="consolebuttons">
+                <button @click="playstationconsole">Playstation</button>
+                <button @click="xboxconsole">Xbox</button>
+                <button @click="cubeconsole" >Nintendo</button>
+            </div>
         </div>
-        <div id="text section">
-            <!-- msg is used to receive data from the home parent component -->
-            <h1>{{ msg }}</h1>
+        <div id="textsection">
+            
+            <h1 :class="titlelook" @click="titlechange">{{ msg }}</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
             nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -32,31 +97,10 @@
             sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>
-        <!-- a list is generated that displays objects in our games array -->
-        <div class="gameslist">
-            <!-- v-for loops through each game from the list of games
-            id is the key that is used to identify each game in the list 
-            game is an optional alias that can help in moving through the list
-            any other alias will be just as effective -->
-            <div class="game" v-for="(game, id) in games" :key="id">
-                <div>{{ game.name }}</div>
-                <div>{{ game.yearofrelease }}</div>
-                <div>{{ game.rating }}</div>
-                <div>{{ game.unitsold }}</div>
-                <div>{{ game.genre }}</div>
-                <!-- because v-for can be used in looping, it is possible to use INTEGER VALUES
-                    to  loop through and print out many elements with one tag-->
-                <div v-for="rating in game.rating" :key="rating">
-                    <img src="./Assets/Images/grade_FILL0_wght300_GRAD200_opsz48.svg">
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
+    </div> -->
 
 <!-- script -->
-<script>
-    export default
+<!-- export default
     {
         props:['msg', 'submsg'],
 
@@ -91,7 +135,9 @@
                         unitsold: '23 million',
                         genre: 'action adventure'
                     }
-                ]
+                ],
+
+                titlelook: "tlook1",
             }
         },
         methods:
@@ -104,16 +150,27 @@
             {
                 this.cons = 7;
             },
-            nintendoconsole()
+            cubeconsole()
             {
                 this.cons = 1;
+            },
+            titlechange()
+            {
+                if(this.titlelook === "tlook1")
+                    this.titlelook = "tlook2";
+                else
+                    this.titlelook = "tlook1";
             }
         }
 
-    }
-</script>
+    } -->
 
-<style>
+    <!-- #centersection
+    {
+        margin-left: 10.625%;
+        margin-right: 10.625%;
+    }
+
     .gameslist
     {
         display:flex;
@@ -123,9 +180,53 @@
         margin-right: 30px;
     }
 
-    .game img
+    #imagesection
     {
-        height: 20px;
-        width: 20px;
+        display:grid;
+        justify-items: center;
     }
-</style>
+    
+    #imagesection img
+    {
+        height: 300px;
+        width: 90%;
+        border-radius: 10%
+    }
+
+    #imagesection button
+    {
+        background-color: black;
+        color: rgb(156, 215, 255);
+        border-width: 2px;
+        border-radius: 15%;
+        border-color: rgb(156, 215, 255);
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+
+    #textsection
+    {
+        text-align: center;
+    }
+
+    #textsection p
+    {
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    #textsection h1
+    {
+        font-family: 'Oswald', sans-serif;
+    }
+    .tlook1
+    {
+        color: rgb(187, 221, 244);
+        font-weight: 150%;
+    }
+
+    .tlook2
+    {
+        color: rgb(241, 108, 241);
+        font-weight: 120%;
+    } -->

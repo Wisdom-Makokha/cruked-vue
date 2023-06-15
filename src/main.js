@@ -1,14 +1,18 @@
 import { createApp } from 'vue'
 import './style.css'
+
+//importing methods to use vue router
 import {createRouter, createWebHashHistory} from 'vue-router'
+
+//import our routes
 import App from './App.vue'
 import home from './components/home/home.vue'
 
-//create a list of our routes
+//create the routes object array
 const routes=[
     {
         name: 'home',
-        path: '/home',
+        path: '/',
         component: home
     }
 ];

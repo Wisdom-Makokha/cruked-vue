@@ -3,11 +3,18 @@
     <div id="topnavigation">
         <div id="logo" >CRUK3D</div>
         <div id="leftbar">
-            <a id="routes" href="" target="_blank">
+            <router-link to="/" class="navroutes" id="home">
                 <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg">
+            </router-link>
+            <!-- <router-link>games</router-link>
+            <router-link>about</router-link> -->
+            <!-- <a id="home" class="routes" href="" target="_blank">
+                
             </a>
-            <a id="routes" href="" target="_blank">games</a>
-            <a id="routes" href="" target="_blank">about</a>
+            <a id="games" class="routes" href="" target="_blank">
+                <img src="./assets/Images/videogame_asset_FILL0_wght200_GRAD200_opsz48.svg">
+            </a>
+            <a id="about" class="routes" href="" target="_blank">about</a> -->
         </div>
     </div>
 </template>
@@ -70,82 +77,38 @@
 </script>
 
 <!-- style -->
-<style>
+<style scoped>
     #topnavigation
     {
         display: flex;
         justify-content: space-between;
-        
+        background-color: rgb(84, 114, 148);
     }
 
-    #routes > img
+    .navroutes
+    {
+        margin-left: 10px;
+    }
+
+    .navroutes > img
     {
         height: 20px;
         width: 20px;
         
     }
     
-    img
-    {
-        height: 200px;
-        border-radius: 20px;
-    }
-    button
-    {
-        width: 100px;
-        height: 55px;
-        color: rgb(119, 193, 241);
-        background-color: black;
-        border-color: rgb(51, 112, 153);
-        margin-left: 5px;
-        margin-bottom: 5px;
-        
-        border-width: 4px;
-        border-radius: 20px;
-    }
-
-    button:hover
-    {
-        background-color: rgb(119, 193, 241);
-        color: black;
-    }
-
-    button:active{
-        background-color: rgb(223, 242, 255);
-        filter: drop-shadow(0 0 4px rgb(119, 193, 241));
-    }
     #logo
     {
         font-family: 'Amarante', cursive;
         font-weight:200%;
         font-size: 180%;
         margin-top:48px;
+        margin-left: 10.625%;
     }
-
-    .first
-    {
-        color: aqua;
-        margin-top: 55px;
-        font-size: 120%;
-    }
-
-    .second
-    {
-        color:pink;
-        margin-top: 55px;
-        font-size: 120%;
-    }
-
-    
-    
 
     #leftbar
     {
         margin-top: 55px;
-    }
-    
-    #routes
-    {
-        margin-left: 10px;
+        margin-right: 10.625%;
     }
 </style>
