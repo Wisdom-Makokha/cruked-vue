@@ -4,7 +4,10 @@
         <div id="logo" >CRUK3D</div>
         <div id="leftbar">
             <router-link to="/" class="navroutes" id="home">
-                <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home">
+            </router-link>
+            <router-link to="/tournaments" class="navroutes" id="tournaments">
+                <img src="./assets/images/trophy_FILL0_wght200_GRAD200_opsz48.svg" alt="tournaments">
             </router-link>
             <!-- <router-link>games</router-link>
             <router-link>about</router-link> -->

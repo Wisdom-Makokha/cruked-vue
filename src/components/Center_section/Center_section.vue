@@ -1,74 +1,5 @@
-<!-- template -->
 <template>
-    <div id="tournament">
-        <div id="tourndetails">
-            <img src="https://images.pexels.com/photos/5691866/pexels-photo-5691866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="tournament poster">
-        </div>
-        <div id="tourndetails">
-            <button>+</button>
-            <button @click="decreasetickets">-</button>
-            <p>{{ events.ticketsavailable }}</p>
-        </div>
-    </div>
-
-</template>
-
-<!-- script -->
-<script>
-import { createCacheExpression } from '@vue/compiler-core';
-
-    export default
-    {
-        data()
-        {
-            return{
-                events:
-                [
-                    {
-                        id: "CHKING123456",
-                        name: "Chess",
-                        poster: "",
-                        description: "",
-                        ticketsavailable: 200,
-                    },
-                    {
-                        id: "PSKING123456",
-                        name: "Hollow-Knight",
-                        poster: "",
-                        description: "",
-                        ticketsavailable: 50,
-                    },
-                    {
-                        id: "DCKING123456",
-                        name: "Dead Cells",
-                        poster: "",
-                        description: "",
-                        ticketsavailable: 50
-                    }
-                ]
-
-            },
-            
-        },
-        methods:
-        {
-            decreasetickets()
-            {
-                this.events.
-            }
-        }
-    }
-</script>
-
-<style scoped>
-    #tournament
-    {
-        display: flex;
-    }
-</style>
-
-<!-- template -->
-<!-- <div id="centersection">
+    <div id="centersection">
         <div id="imagesection">
             
             <div v-if="cons === 7">
@@ -97,10 +28,11 @@ import { createCacheExpression } from '@vue/compiler-core';
             sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>
-    </div> -->
+    </div>
+</template>
 
-<!-- script -->
-<!-- export default
+<script>
+    export default
     {
         props:['msg', 'submsg'],
 
@@ -163,9 +95,11 @@ import { createCacheExpression } from '@vue/compiler-core';
             }
         }
 
-    } -->
+    }
+</script>
 
-    <!-- #centersection
+<style scoped>
+    #centersection
     {
         margin-left: 10.625%;
         margin-right: 10.625%;
@@ -229,4 +163,5 @@ import { createCacheExpression } from '@vue/compiler-core';
     {
         color: rgb(241, 108, 241);
         font-weight: 120%;
-    } -->
+    }
+</style>
