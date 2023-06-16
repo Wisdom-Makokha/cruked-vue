@@ -11,9 +11,11 @@
                     Description: {{ events[tournnumber].description }}<br>
                     Tickets Available: {{ events[tournnumber].ticketsavailable }}
                 </p>
-                <button @click="increasetickets">Increase tickets<br>purchased</button>
-                <button @click="decreasetickets">Decrease tickets<br>purchased</button>
-                <p>You are buying {{ ticketsincart }} tickets</p>
+                <div id="ticketbutton">                
+                    <button @click="increasetickets">Increase tickets<br>purchased</button>
+                    <button @click="decreasetickets">Decrease tickets<br>purchased</button><br>
+                    <button>Confirm purchase of<br>{{ ticketsincart }} tickets</button>
+                </div>
                 
             </div>
         </div>
@@ -58,7 +60,7 @@ import { createCacheExpression } from '@vue/compiler-core';
                         ticketsavailable: 50
                     }
                 ],
-                tournnumber: 1,
+                tournnumber: 0,
                 ticketsincart: 0
             }
             
@@ -77,7 +79,10 @@ import { createCacheExpression } from '@vue/compiler-core';
             },
             changetourn()
             {
-                
+                if(this.tournnumber === 2)
+                    this.tournnumber = 0;
+                else
+                    this.tournnumber++;
             }
         }
     }
