@@ -1,7 +1,7 @@
 <!-- template -->
 <template>
     <div id="topnavigation">
-        <div id="logo" >CRUK3D</div>
+        <router-link id="logo" to="/">CRUK3D</router-link>
         <div id="leftbar">
             <router-link to="/" class="navroutes" id="home">
                 <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home">
@@ -86,6 +86,7 @@
         display: flex;
         justify-content: space-between;
         background-color: rgb(84, 114, 148);
+        margin-bottom: 20px;
     }
 
     .navroutes
@@ -102,9 +103,11 @@
     
     #logo
     {
+        text-decoration: none;
         font-family: 'Amarante', cursive;
         font-weight:200%;
         font-size: 180%;
+        color: rgb(187, 221, 244);
         margin-top:48px;
         margin-left: 10.625%;
     }

@@ -7,16 +7,15 @@
             </div>
             <div id="tourndetails">
                 <p>
-                    Name: {{ events[tournnumber].name }}<br>
-                    Description: {{ events[tournnumber].description }}<br>
+                    Name: {{ events[tournnumber].name }}<br><br>
+                    Description: {{ events[tournnumber].description }}<br><br>
                     Tickets Available: {{ events[tournnumber].ticketsavailable }}
                 </p>
                 <div id="ticketbutton">                
                     <button @click="increasetickets">Increase tickets<br>purchased</button>
-                    <button @click="decreasetickets">Decrease tickets<br>purchased</button><br>
-                    <button>Confirm purchase of<br>{{ ticketsincart }} tickets</button>
+                    <button @click="decreasetickets">Decrease tickets<br>purchased</button>
                 </div>
-                
+                <button id="purchasebutton" @click="confirmpurchase">Confirm purchase of<br>{{ ticketsincart }} tickets</button>
             </div>
         </div>
     </div>
@@ -83,6 +82,11 @@ import { createCacheExpression } from '@vue/compiler-core';
                     this.tournnumber = 0;
                 else
                     this.tournnumber++;
+            },
+            confirmpurchase()
+            {
+                this.events[this.tournnumber].ticketsavailable = this.events[this.tournnumber].ticketsavailable - this.ticketsincart;
+                this.ticketsincart = 0;
             }
         }
     }
@@ -98,12 +102,50 @@ import { createCacheExpression } from '@vue/compiler-core';
     }
     #tournimage > img
     {
-        width: 100%;
-        height: 500px
+        width: 90%;
+        height: 500px;
+        border-radius: 10%;
     }
 
     #tourndetails
     {
         width: 50%;
+        
+    }
+
+    #ticketbutton
+    {
+        display: flex;
+        justify-content: center
+    }
+
+    #ticketbutton button
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        padding: 10px
+    }
+
+    #purchasebutton
+    {
+        background-color: white;
+        color: black;
+        border-color: black;
+        border-width: 3px;
+        padding: 20px;
+        font-size: 105%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    #purchasebutton:hover
+    {
+        background-color: rgb(156, 215, 255);
+    }
+
+    #purchasebutton:active
+    {
+        background-color: #FFD700;
     }
 </style>

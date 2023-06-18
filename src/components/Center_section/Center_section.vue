@@ -129,11 +129,6 @@
 
     #imagesection button
     {
-        background-color: black;
-        color: rgb(156, 215, 255);
-        border-width: 2px;
-        border-radius: 15%;
-        border-color: rgb(156, 215, 255);
         margin-left: 20px;
         margin-right: 20px;
 
