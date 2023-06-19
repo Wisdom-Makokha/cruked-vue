@@ -2,19 +2,26 @@
     <div>
         <navigation />
         <div id="tournament">
+            <!-- the src attribute is v-bind to the poster element in the events object array
+            as the value of tournnumber changes, the poster on display changes as well -->
             <div id="tournimage">
                 <img :src=events[tournnumber].poster alt="tournament poster" @click="changetourn">
             </div>
+            <!-- tournnumber makes the events object array reactive, when its value changes
+            the details that are displayed change along with it-->
             <div id="tourndetails">
                 <p>
                     Name: {{ events[tournnumber].name }}<br><br>
                     Description: {{ events[tournnumber].description }}<br><br>
                     Tickets Available: {{ events[tournnumber].ticketsavailable }}
                 </p>
+                <!-- these buttons are used to change the number of tickets that are set in cart 
+                to be purchased -->
                 <div id="ticketbutton">                
                     <button @click="increasetickets">Increase tickets<br>purchased</button>
                     <button @click="decreasetickets">Decrease tickets<br>purchased</button>
                 </div>
+                <!-- this button confirms the purchase of tickets and reduces the number of tickets available for that event -->
                 <button id="purchasebutton" @click="confirmpurchase">Confirm purchase of<br>{{ ticketsincart }} tickets</button>
             </div>
         </div>
@@ -25,6 +32,7 @@
 <!-- script -->
 <script>
 import { createCacheExpression } from '@vue/compiler-core';
+    // the navigation component is imported to the tournament component to be displayed at the top
     import navigation from '../Navigation/navigation.vue';
     export default
     {
@@ -35,6 +43,7 @@ import { createCacheExpression } from '@vue/compiler-core';
         data()
         {
             return{
+                // the events object array contains all the details for each event
                 events:
                 [
                     {
@@ -59,23 +68,28 @@ import { createCacheExpression } from '@vue/compiler-core';
                         ticketsavailable: 50
                     }
                 ],
+                //this variable is what will be used to navigate through the objects in our event array
                 tournnumber: 0,
+                //this variable is used to hold the ticket number before they are purchased
                 ticketsincart: 0
             }
             
         },
         methods:
         {
+            //this method increases the number of tickets in cart
             increasetickets()
             {
                 if(this.ticketsincart < this.events[this.tournnumber].ticketsavailable)
                     this.ticketsincart++;
             },
+            // this method decreases the number of tickets in cart
             decreasetickets()
             {
                 if(this.ticketsincart > 0)
                    this.ticketsincart--;
             },
+            //this method is the
             changetourn()
             {
                 if(this.tournnumber === 2)
