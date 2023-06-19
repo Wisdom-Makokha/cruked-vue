@@ -23,6 +23,7 @@
                 </div>
                 <!-- this button confirms the purchase of tickets and reduces the number of tickets available for that event -->
                 <button id="purchasebutton" @click="confirmpurchase">Confirm purchase of<br>{{ ticketsincart }} tickets</button>
+                <p>count : {{ count }}</p>
             </div>
         </div>
     </div>
@@ -71,7 +72,8 @@ import { createCacheExpression } from '@vue/compiler-core';
                 //this variable is what will be used to navigate through the objects in our event array
                 tournnumber: 0,
                 //this variable is used to hold the ticket number before they are purchased
-                ticketsincart: 0
+                ticketsincart: 0,
+                count: 0
             }
             
         },
@@ -89,7 +91,9 @@ import { createCacheExpression } from '@vue/compiler-core';
                 if(this.ticketsincart > 0)
                    this.ticketsincart--;
             },
-            //this method is the
+            //this method is the key to moving through the object array
+            //it moves from one element to the next element immediately following it
+            //then when it gets to the end of the array it loops back to the beginning 
             changetourn()
             {
                 if(this.tournnumber === 2)
@@ -97,6 +101,9 @@ import { createCacheExpression } from '@vue/compiler-core';
                 else
                     this.tournnumber++;
             },
+            //this method only subtracts the number of tickets in the cart from
+            //the tickets available
+            //no purchases are made
             confirmpurchase()
             {
                 this.events[this.tournnumber].ticketsavailable = this.events[this.tournnumber].ticketsavailable - this.ticketsincart;
@@ -124,7 +131,6 @@ import { createCacheExpression } from '@vue/compiler-core';
     #tourndetails
     {
         width: 50%;
-        
     }
 
     #ticketbutton
