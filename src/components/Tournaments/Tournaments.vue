@@ -5,12 +5,16 @@
             <div id="tournimage">
                 <img :src=event.poster alt="tournament poster" >
             </div>
+            <!-- tournnumber makes the events object array reactive, when its value changes
+            the details that are displayed change along with it-->
             <div id="tourndetails">
                 <p>
                     Name: {{ event.name }}<br><br>
                     Description: {{ event.description }}<br><br>
                     Tickets Available: {{ event.ticketsavailable }}
                 </p>
+                <!-- these buttons are used to change the number of tickets that are set in cart 
+                to be purchased -->
                 
                 <div id="ticketbutton">                
                     <button @click="increasetickets(event.id)">Increase tickets<br>purchased</button>
@@ -27,6 +31,7 @@
 <!-- script -->
 <script>
 import { createCacheExpression } from '@vue/compiler-core';
+    // the navigation component is imported to the tournament component to be displayed at the top
     import navigation from '../Navigation/navigation.vue';
     export default
     {
@@ -37,6 +42,7 @@ import { createCacheExpression } from '@vue/compiler-core';
         data()
         {
             return{
+                // the events object array contains all the details for each event
                 events:
                 [
                     {
