@@ -100,12 +100,13 @@ import { createCacheExpression } from '@vue/compiler-core';
     {
         margin-left: 10.625%;
         margin-right: 10.625%;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         padding: 16px;
         border-radius: 14px;
         display: flex;
         justify-content: space-around;
         background-color:rgb(35, 58, 76);
+        box-shadow: 0 2px 7px 0 rgba(156, 215, 255, 0.7), 0 5px 15px 0 rgba(156, 215, 255, 0.8);
     }
     #tournimage > img
     {
