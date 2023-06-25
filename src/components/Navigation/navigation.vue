@@ -89,6 +89,11 @@
         font-family: 'PT Serif', serif;
         font-size: 120%;
     }
+    
+    .navroutes:hover
+    {
+        text-decoration:underline;
+    }
 
     .navroutes > img
     {
@@ -96,7 +101,7 @@
         width: 40px;
         
     }
-    
+
     #logo
     {
         text-decoration: none;
@@ -108,6 +113,12 @@
         margin-left: 10.625%;
     }
 
+    #logo:hover
+    {
+        text-decoration: underline;
+    }
+
+    
     #leftbar
     {
         margin-top: 55px;
