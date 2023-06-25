@@ -1,7 +1,8 @@
 :root
   {
-    background-color:rgb(23, 37, 45);
-    color: rgb(187, 221, 244);
+    background-color:rgb(17, 27, 34);
+    color: rgb(219, 240, 254);
+    font-family: 'Roboto Mono', monospace;
   }
 
   button
@@ -9,7 +10,7 @@
         background-color: black;
         color: rgb(156, 215, 255);
         border-width: 3px;
-        border-radius: 15%;
+        border-radius: 10%;
         border-color: rgb(156, 215, 255);
     }
 

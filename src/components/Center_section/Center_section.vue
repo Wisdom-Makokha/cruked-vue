@@ -139,11 +139,6 @@
         text-align: center;
     }
 
-    #textsection p
-    {
-        font-family: 'Roboto Mono', monospace;
-    }
-
     #textsection h1
     {
         font-family: 'Oswald', sans-serif;

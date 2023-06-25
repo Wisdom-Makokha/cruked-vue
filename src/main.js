@@ -8,6 +8,7 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import App from './App.vue'
 import home from './components/home/home.vue'
 import tournaments from './components/Tournaments/tournaments.vue'
+import about from './components/About/about.vue'
 
 //create the routes object array
 const routes=[
@@ -20,6 +21,11 @@ const routes=[
         name: 'tournaments',
         path: '/tournaments',
         component: tournaments
+    },
+    {
+        name: 'about',
+        path: '/about',
+        component: about
     }
 ];
 

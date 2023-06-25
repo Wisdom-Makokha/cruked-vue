@@ -3,21 +3,13 @@
     <div id="topnavigation">
         <router-link id="logo" to="/">CRUK3D</router-link>
         <div id="leftbar">
-            <router-link to="/" class="navroutes" id="home">
-                <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home">
+            <router-link to="/" class="navroutes" id="home">home
+                <!-- <img src="./assets/Images/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home"> -->
             </router-link>
-            <router-link to="/tournaments" class="navroutes" id="tournaments">
-                <img src="./assets/images/trophy_FILL0_wght200_GRAD200_opsz48.svg" alt="tournaments">
+            <router-link to="/tournaments" class="navroutes" id="tournaments">tournaments
+                <!-- <img src="./assets/images/trophy_FILL0_wght200_GRAD200_opsz48.svg" alt="tournaments"> -->
             </router-link>
-            <!-- <router-link>games</router-link>
-            <router-link>about</router-link> -->
-            <!-- <a id="home" class="routes" href="" target="_blank">
-                
-            </a>
-            <a id="games" class="routes" href="" target="_blank">
-                <img src="./assets/Images/videogame_asset_FILL0_wght200_GRAD200_opsz48.svg">
-            </a>
-            <a id="about" class="routes" href="" target="_blank">about</a> -->
+            <router-link to="/about" class="navroutes" id="about">about</router-link>
         </div>
     </div>
 </template>
@@ -91,13 +83,17 @@
 
     .navroutes
     {
-        margin-left: 10px;
+        margin-left: 15px;
+        text-decoration: none;
+        color: black;
+        font-family: 'PT Serif', serif;
+        font-size: 120%;
     }
 
     .navroutes > img
     {
-        height: 30px;
-        width: 30px;
+        height: 35px;
+        width: 40px;
         
     }
     
