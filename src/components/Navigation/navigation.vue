@@ -88,11 +88,12 @@
         color: black;
         font-family: 'PT Serif', serif;
         font-size: 120%;
+        transition: color 0.5s;
     }
     
     .navroutes:hover
     {
-        text-decoration:underline;
+        color: rgb(219, 240, 254);
     }
 
     .navroutes > img
@@ -111,11 +112,12 @@
         color: rgb(187, 221, 244);
         margin-top:48px;
         margin-left: 10.625%;
+        transition: color 1s;
     }
 
-    #logo:hover
+    #logo:hover, #logo:focus
     {
-        text-decoration: underline;
+        color: black;
     }
 
     

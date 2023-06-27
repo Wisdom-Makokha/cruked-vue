@@ -106,8 +106,14 @@ import { createCacheExpression } from '@vue/compiler-core';
         display: flex;
         justify-content: space-around;
         background-color:rgb(35, 58, 76);
+        transition: box-shadow 0.3s;
+    }
+
+    #tournament:hover, #tournament:focus
+    {
         box-shadow: 0 2px 7px 0 rgba(156, 215, 255, 0.7), 0 5px 15px 0 rgba(156, 215, 255, 0.8);
     }
+
     #tournimage > img
     {
         width: 90%;

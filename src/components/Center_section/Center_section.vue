@@ -126,6 +126,11 @@
         width: 90%;
         border-radius: 10%;
         margin-bottom: 15px;
+        transition: box-shadow 2s;
+    }
+
+    #imagesection img:hover, #imagesection  img:focus
+    {
         box-shadow: 0 3px 6px 0 rgba(156, 215, 255, 0.7), 0 7px 15px 0 rgba(156, 215, 255, 0.9);
     }
 
